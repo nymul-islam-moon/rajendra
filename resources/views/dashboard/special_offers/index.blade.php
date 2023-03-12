@@ -6,12 +6,18 @@
 
 @section('content')
 <div class="container-fluid">
+
     <div class="page-titles">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="">Dashboard</a></li>
             <li class="breadcrumb-item active"><a href="">Special-Offer</a></li>
         </ol>
     </div>
+
+    {{-- flash Message --}}
+    <x-flash-message />
+
+    {{-- flash Message --}}
     <!-- row -->
 
     <div class="row">
