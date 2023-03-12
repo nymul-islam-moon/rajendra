@@ -51,10 +51,11 @@ class SpecialOffersController extends Controller
 
         $formData['start_date'] = date('Y-m-d', strtotime($formData['start_date']));
         $formData['end_date'] = date('Y-m-d', strtotime($formData['end_date']));
+        $formData['status'] = 1;
 
         specialOffers::create($formData);
 
-        return redirect()->route('dashboard.specialOffer.index');
+        return redirect()->route('dashboard.specialOffer.index')->with('success', 'Special offers Created Successfully');
 
     }
 
@@ -109,7 +110,7 @@ class SpecialOffersController extends Controller
 
         $specialOffer->update($formData);
 
-        return redirect()->route('dashboard.specialOffer.index');
+        return redirect()->route('dashboard.specialOffer.index')->with('success', 'Special offers Updated Successfully');;
     }
 
     /**
@@ -123,7 +124,27 @@ class SpecialOffersController extends Controller
         $old_photo = $specialOffer->image;
         unlink(public_path('uploads/special_offers/' . $old_photo));
         $specialOffer->delete();
-        return redirect()->route('dashboard.specialOffer.index');
+        return redirect()->route('dashboard.specialOffer.index')->with('error', 'Special offers Deleted Successfully');;
 
     }
+
+    public function status(specialOffers $specialOffer)
+    {
+        $specialOffer->status = $specialOffer->status == 1 ? '0' : '1';
+
+        if ($specialOffer->status == 1){
+            $messageKey = 'success';
+            $messageValue = 'Offer Accivated';
+        }else{
+            $messageKey = 'error';
+            $messageValue = 'Offer Deactivated';
+        }
+
+        $specialOffer->save();
+
+        return redirect()->route('dashboard.specialOffer.index')->with($messageKey, $messageValue);
+    }
+
+
+
 }

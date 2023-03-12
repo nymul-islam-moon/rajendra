@@ -1,5 +1,9 @@
 @extends('components.index')
 
+@push('custome_header')
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+@endpush
+
 @section('content')
 <div class="container-fluid">
     <div class="page-titles">
@@ -118,7 +122,7 @@
                                     <th>Start Date</th>
                                     <th>End Date</th>
                                     <th>Descriotion</th>
-                                    <th>STATUS</th>
+                                    <th>Active Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -143,8 +147,39 @@
                                         <td>{{ $specialOffer->name }}</td>
                                         <td>{{ $specialOffer->start_date }}</td>
                                         <td>{{ $specialOffer->end_date }}</td>
+
                                         <td>{{ $specialOffer->description }}</td>
-                                        <td><span class="badge light badge-success">Successful</span></td>
+                                        <td>
+                                            @if ($specialOffer->status == 1)
+                                                <form action="{{ route('dashboard.specialOffer.status', $specialOffer->id) }}" method="post">
+                                                    @csrf
+                                                    @method('post')
+                                                    <button type="submit" class="badge light badge-success">Active</button>
+                                                </form>
+                                            @else
+                                                <form action="{{ route('dashboard.specialOffer.status', $specialOffer->id) }}" method="post">
+                                                    @csrf
+                                                    @method('post')
+                                                    <button type="submit" class="badge light badge-danger">Deactive</button>
+                                                </form>
+                                            @endif
+                                        </td>
+
+                                        {{-- This part is for jquery --}}
+                                        {{-- <td>
+                                            @if ($specialOffer->status == '1')
+                                            <form action="{{ route('dashboard.specialOffer.destroy', $specialOffer->id) }}" method="post">
+                                                @csrf
+                                                @method('post')
+                                                <input type="checkbox" checked data-toggle="toggle">
+                                            </form>
+
+                                            @else
+                                                <input type="checkbox" data-toggle="toggle">
+                                            @endif
+                                        </td> --}}
+                                        {{-- This part is for jquery --}}
+
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -156,5 +191,8 @@
     </div>
 </div>
 
-
 @endsection
+
+@push('custome_script')
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+@endpush

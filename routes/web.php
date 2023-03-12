@@ -25,5 +25,6 @@ Route::prefix('/dashboard')->group(function () {
         Route::get('/{specialOffer}/edit', 'edit')->name('dashboard.specialOffer.edit');
         Route::put('/{specialOffer}/update', 'update')->name('dashboard.specialOffer.update');
         Route::delete('/{specialOffer}/destroy', 'destroy')->name('dashboard.specialOffer.destroy');
+        Route::post('/{specialOffer}/status', 'status')->name('dashboard.specialOffer.status');
     });
 });
