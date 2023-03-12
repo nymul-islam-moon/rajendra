@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SpecialOffersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::prefix('/dashboard')->group(function () {
+    Route::controller(SpecialOffersController::class)->prefix('/special-offer')->group(function () {
+        Route::get('/', 'index')->name('dashboard.specialOffer.index');
+        Route::post('/', 'store')->name('dashboard.specialOffer.store');
+        Route::get('/{specialOffer}/edit', 'edit')->name('dashboard.specialOffer.edit');
+        Route::put('/{specialOffer}/update', 'update')->name('dashboard.specialOffer.update');
+        Route::delete('/{specialOffer}/destroy', 'destroy')->name('dashboard.specialOffer.destroy');
+    });
 });
