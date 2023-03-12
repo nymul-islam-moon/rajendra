@@ -27,4 +27,8 @@ Route::prefix('/dashboard')->group(function () {
         Route::delete('/{specialOffer}/destroy', 'destroy')->name('dashboard.specialOffer.destroy');
         Route::post('/{specialOffer}/status', 'status')->name('dashboard.specialOffer.status');
     });
+
+    Route::get('/', function () {
+        return view('dashboard.test.index');
+    });
 });
