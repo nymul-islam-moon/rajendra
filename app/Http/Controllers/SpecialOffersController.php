@@ -124,7 +124,7 @@ class SpecialOffersController extends Controller
         $old_photo = $specialOffer->image;
         unlink(public_path('uploads/special_offers/' . $old_photo));
         $specialOffer->delete();
-        return redirect()->route('dashboard.specialOffer.index')->with('error', 'Special offers Deleted Successfully');;
+        return redirect()->route('dashboard.specialOffer.index')->with('error', 'Special offers Deleted Successfully');
 
     }
 

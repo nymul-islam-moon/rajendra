@@ -8,22 +8,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Gymove - Fitness Bootstrap Admin Dashboard</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
-    <!-- Daterange picker -->
-    <link href="{{ asset('assets/vendor/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
-    <!-- Clockpicker -->
-    <link href="{{ asset('assets/vendor/clockpicker/css/bootstrap-clockpicker.min.css') }}" rel="stylesheet">
-    <!-- asColorpicker -->
-    <link href="{{ asset('assets/vendor/jquery-asColorPicker/css/asColorPicker.min.css') }}" rel="stylesheet">
-    <!-- Material color picker -->
-    <link href="{{ asset('assets/vendor/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css') }}" rel="stylesheet">
-    <!-- Pick date -->
-    <link rel="stylesheet" href="{{ asset('assets/vendor/pickadate/themes/default.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendor/pickadate/themes/default.date.css') }}">
-    <!-- Custom Stylesheet -->
-	<link href="{{ asset('assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon.png') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/select2/css/select2.min.css') }}">
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -582,7 +570,7 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
                             <div class="dashboard_bar">
-								Pickers
+								Select2
                             </div>
                         </div>
                         <ul class="navbar-nav header-right">
@@ -945,157 +933,183 @@
             <div class="container-fluid">
                 <div class="page-titles">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="javascript:void(0)">Form</a></li>
-						<li class="breadcrumb-item active"><a href="javascript:void(0)">Pickers</a></li>
+						<li class="breadcrumb-item"><a href="javascript:void(0)">Components</a></li>
+						<li class="breadcrumb-item active"><a href="javascript:void(0)">Select2</a></li>
 					</ol>
                 </div>
-                <!-- row -->
                 <div class="row">
-                    <div class="col-xl-9">
+                    <div class="col-xl-6">
                         <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Date Picker</h4>
-                            </div>
                             <div class="card-body">
-                                <div class="row">
-                                    <div class="col-xl-4 mb-3">
-                                        <div class="example">
-                                            <p class="mb-1">Date Range Pick</p>
-                                            <input class="form-control input-daterange-datepicker" type="text" name="daterange" value="01/01/2015 - 01/31/2015">
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 mb-3">
-                                        <div class="example">
-                                            <p class="mb-1">Date Range With Time</p>
-                                            <input type="text" class="form-control input-daterange-timepicker" name="daterange" value="01/01/2015 1:30 PM - 01/01/2015 2:00 PM">
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4">
-                                        <div class="example">
-                                            <p class="mb-1">Limit Selectable Dates</p>
-                                            <input class="form-control input-limit-datepicker" type="text" name="daterange" value="06/01/2015 - 06/07/2015">
-                                        </div>
-                                    </div>
+                                <div class="mb-4">
+                                    <h4 class="card-title">Single select boxes</h4>
+                                    <p>Select2 can take a regular select box like this...</p>
+                                </div>
+
+                                <select id="single-select">
+                                    <option value="AL">Alabama</option>
+                                    <option value="WY">Wyoming</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="mb-4">
+                                    <h4 class="card-title">Themes</h4>
+                                    <p>Select2 supports custom themes using the <code>theme</code> option so you can style Select2 to match the rest of your application.</p>
+                                </div>
+
+                                <div class="mb-4">
+                                    <select class="js-example-theme-single">
+                                        <option value="AL">Alabama</option>
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                </div>
+
+                                <div class="">
+                                    <select class="js-example-theme-multiple" name="states[]" multiple="multiple">
+                                        <option value="AL">Alabama</option>
+                                        <option value="WY">Wyoming</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3">
-                        <!-- Card -->
+
+                    <div class="col-xl-6">
                         <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Pick-Date picker</h4>
-                            </div>
                             <div class="card-body">
-                                <p class="mb-1">Default picker</p>
-                                <input name="datepicker" class="datepicker-default form-control" id="datepicker">
+                                <div class="mb-4">
+                                    <h4 class="card-title">Ajax (remote data)</h4>
+                                    <p>Select2 comes with AJAX support built in, using jQuery's AJAX methods. In this example, we can search for repositories using GitHub's API:</p>
+                                </div>
+
+                                <select class="js-data-example-ajax w-100">
+
+                                </select>
                             </div>
                         </div>
-                        <!-- Card -->
                     </div>
-                    <div class="col-12">
+
+                    <div class="col-xl-6">
                         <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Date picker</h4>
-                            </div>
                             <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-6 col-xl-3 col-xxl-6 mb-3">
-                                        <label>Default Clock Picker</label>
-                                        <div class="input-group clockpicker">
-                                            <input type="text" class="form-control" value="09:30"> <span class="input-group-append"><span class="input-group-text"><i
-                                                        class="fa fa-clock-o"></i></span></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-xl-3 col-xxl-6 mb-3">
-                                        <label>Auto close Clock Picker</label>
-                                        <div class="input-group clockpicker" data-placement="bottom" data-align="top" data-autoclose="true">
-                                            <input type="text" class="form-control" value="13:14"> <span class="input-group-append"><span class="input-group-text"><i
-                                                        class="fa fa-clock-o"></i></span></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-xl-3 col-xxl-6 mb-3">
-                                        <label>Now time</label>
-                                        <!-- <div class="input-group">
-                                            <input class="form-control" id="single-input" value="" placeholder="Now">
-                                            <span class="input-group-btn"><button type="button" id="check-minutes" class="btn waves-effect waves-light btn-ft btn-success">Check the minutes</button></span>
-                                        </div> -->
-										<div class="input-group">
-                                            <input class="form-control" id="single-input" value="" placeholder="Now">
-                                            <div class="input-group-append">
-												<button type="button" id="check-minutes" class="btn waves-effect waves-light btn-ft btn-success">Check the minutes</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-xl-3 col-xxl-6">
-                                        <label>Left Placement</label>
-                                        <div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
-                                            <input type="text" class="form-control" value="13:14">
-											<span class="input-group-append">
-												<span class="input-group-text"><i class="fa fa-clock-o"></i></span>
-											</span>
-                                        </div>
-                                    </div>
+                                <div class="mb-4">
+                                    <h4 class="card-title">Loading array data</h4>
+                                    <p>You may use the <code>data</code> configuration option to load dropdown options from a local array.</p>
+                                </div>
+
+                                <select class="js-example-data-array">
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="mb-4">
+                                    <h4 class="card-title">Automatic Selection</h4>
+                                    <p>Select2 can be configured to automatically select the currently highlighted result when the dropdown is closed by using the <code>selectOnClose</code> option:
+                                    </p>
+                                </div>
+
+                                <select id="automatic-selection">
+                                    <option value="AL">Alabama</option>
+                                    <option value="WY">Wyoming</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="mb-4">
+                                    <h4 class="card-title">Remain open after selection</h4>
+                                    <p>Select2 will automatically close the dropdown when an element is selected, similar to what is done with a normal select box. You may use the
+                                        <code>closeOnSelect</code> option to prevent the dropdown from closing when a result is selected:</p>
+                                </div>
+
+                                <select id="remain-open">
+                                    <option value="AL">Alabama</option>
+                                    <option value="WY">Wyoming</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="mb-4">
+                                    <h4 class="card-title">Dropdown placement</h4>
+                                    <p>The <code>dropdownParent</code> option allows you to pick an alternative element for the dropdown to be appended to:</p>
+                                </div>
+
+                                <select id="dropdown-placement">
+                                    <option value="AL">Alabama</option>
+                                    <option value="WY">Wyoming</option>
+                                </select>
+                                <div id="select2-modal">
+
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12">
+
+                    <div class="col-xl-6">
                         <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Material Date picker</h4>
-                            </div>
                             <div class="card-body">
-                                <div class="row form-material">
-                                    <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
-                                        <label>Default Material Date Picker</label>
-                                        <input type="text" class="form-control" placeholder="2017-06-04" id="mdate">
-                                    </div>
-                                    <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
-                                        <label>Default Material Date Timepicker</label>
-                                        <input type="text" id="date-format" class="form-control" placeholder="Saturday 24 June 2017 - 21:44">
-                                    </div>
-                                    <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
-                                        <label>Time Picker</label>
-                                        <input class="form-control" id="timepicker" placeholder="Check time">
-                                    </div>
-                                    <div class="col-xl-3 col-xxl-6 col-md-6">
-                                        <label>Min Date set</label>
-                                        <input type="text" class="form-control" placeholder="set min date" id="min-date">
-                                    </div>
+                                <div class="mb-4">
+                                    <h4 class="card-title">Limiting the number of selections</h4>
+                                    <p>Select2 multi-value select boxes can set restrictions regarding the maximum number of options that can be selected. The select below is declared with the
+                                        <code>multiple</code> attribute with <code>maximumSelectionLength</code> in the select2 options.</p>
                                 </div>
+
+                                <select id="limit-selection" name="states[]" multiple="multiple">
+                                    <option value="AL">Alabama</option>
+                                    <option value="WY">Wyoming</option>
+                                    <option value="BY">Lorem</option>
+                                    <option value="DY">Ipsum</option>
+                                    <option value="MY">Dolor</option>
+                                </select>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12">
+
+                    <div class="col-xl-6">
                         <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Color Picker</h4>
-                            </div>
                             <div class="card-body">
-                                <div class="row">
-                                    <div class="col-xl-4 col-lg-6 mb-3">
-                                        <div class="example">
-                                            <p class="mb-1">Simple mode</p>
-                                            <input type="text" class="as_colorpicker form-control" value="#7ab2fa">
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-6 mb-3">
-                                        <div class="example">
-                                            <p class="mb-1">Complex mode</p>
-                                            <input type="text" class="complex-colorpicker form-control" value="#fa7a7a">
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-6 mb-3">
-                                        <div class="example">
-                                            <p class="mb-1">Gradiant mode</p>
-                                            <input type="text" class="gradient-colorpicker form-control" value="#bee0ab">
-                                        </div>
-                                    </div>
+                                <div class="mb-4">
+                                    <h4 class="card-title">Dynamic option creation</h4>
+                                    <p>In addition to a prepopulated menu of options, Select2 can dynamically create new options from text input by the user in the search box. This feature is called "tagging". To enable tagging, set the <code>tags</code>                                        option to
+                                        <code>true</code>:</p>
                                 </div>
+                                <select id="dynamic-option-creation">
+                                    <option value="AL">Red</option>
+                                    <option value="WY">Green</option>
+                                    <option value="BY">Yellow</option>
+                                </select>
                             </div>
                         </div>
                     </div>
+
+
+
+
+
+
+
+
+
+
+
+
                 </div>
             </div>
         </div>
@@ -1135,42 +1149,13 @@
     ***********************************-->
     <!-- Required vendors -->
     <script src="{{ asset('assets/vendor/global/global.min.js') }}"></script>
-	<script src="{{ asset('assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
     <script src="{{ asset('assets/js/custom.min.js') }}"></script>
 	<script src="{{ asset('assets/js/deznav-init.js') }}"></script>
 
 
 
-
-    <!-- Daterangepicker -->
-    <!-- momment js is must -->
-    <script src="{{ asset('assets/vendor/moment/moment.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
-    <!-- clockpicker -->
-    <script src="{{ asset('assets/vendor/clockpicker/js/bootstrap-clockpicker.min.js') }}"></script>
-    <!-- asColorPicker -->
-    <script src="{{ asset('assets/vendor/jquery-asColor/jquery-asColor.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/jquery-asGradient/jquery-asGradient.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/jquery-asColorPicker/js/jquery-asColorPicker.min.js') }}"></script>
-    <!-- Material color picker -->
-    <script src="{{ asset('assets/vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js') }}"></script>
-    <!-- pickdate -->
-    <script src="{{ asset('assets/vendor/pickadate/picker.js') }}"></script>
-    <script src="{{ asset('assets/vendor/pickadate/picker.time.js') }}"></script>
-    <script src="{{ asset('assets/vendor/pickadate/picker.date.js') }}"></script>
-
-
-
-    <!-- Daterangepicker -->
-    <script src="{{ asset('assets/js/plugins-init/bs-daterange-picker-init.js') }}"></script>
-    <!-- Clockpicker init -->
-    <script src="{{ asset('assets/js/plugins-init/clock-picker-init.js') }}"></script>
-    <!-- asColorPicker init -->
-    <script src="{{ asset('assets/js/plugins-init/jquery-asColorPicker.init.js') }}"></script>
-    <!-- Material color picker init -->
-    <script src="{{ asset('assets/js/plugins-init/material-date-picker-init.js') }}"></script>
-    <!-- Pickdate -->
-    <script src="{{ asset('assets/js/plugins-init/pickadate-init.js') }}"></script>
+    <script src="{{ asset('assets/vendor/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins-init/select2-init.js') }}"></script>
 
 
 
