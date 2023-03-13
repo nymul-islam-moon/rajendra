@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,8 +7,8 @@
     <title>Rajendra Eco Resort & Village Ltd.</title>
     <link rel="shortcut icon" href="img/favicon.png" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow&amp;family=Barlow+Condensed&amp;family=Gilda+Display&amp;display=swap">
-    <link rel="stylesheet" href="{{ asset('frontend/css/plugins.css') }}" />
-    <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}" />
+    <link rel="stylesheet" href="css/plugins.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
 </head>
 
@@ -68,8 +67,7 @@
                 <div class="col-md-12 mb-30 ">
                     <h3 class="book-now-title">Book Now</h3>
                     <p class="book-now-p">Please fill in the following booking form and send it to us. We will get back to you with confirmation as soon as possible.</p>
-                    <form method="post" class="contact__form book-form" action="{{ route('dashboard.roombook.store') }}">
-                        @csrf
+                    <form method="post" class="contact__form book-form" action="#">
                         <!-- form message -->
                         <div class="row">
                             <div class="col-12">
@@ -79,16 +77,16 @@
                         <!-- form elements -->
                         <div class="row">
                             <div class="col-md-6 form-group ">
-                                <input type="text" class=" datepicker" name="check_in" placeholder="Check in *" required>
+                                <input type="text" class=" datepicker" placeholder="Check in *" required>
                             </div>
                             <div class="col-md-6 form-group ">
-                                <input type="text" class=" datepicker" name="check_out" placeholder="Check out *" required>
+                                <input type="text" class=" datepicker" placeholder="Check out *" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <div class="select1_wrapper  ">
 
                                     <div class="select1_inner" required>
-                                        <select class="select22  select "  style="width: 100%" name="room_id">
+                                        <select class="select22  select "  style="width: 100%">
                                             <option value="1" id="select2-k72o-result-iimg-1" class="select2-results__option">--Select Room-- *</option>
                                             <option value="2" id="select2-k72o-result-iimg-1" class="select2-results__option">1 Rooms</option>
                                             <option value="3" id="select2-k72o-result-iimg-1" class="select2-results__option">2 Rooms</option>
@@ -97,17 +95,54 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 form-group ">
-                                <input type="text" class="" name="check_out" placeholder="Room Number" required>
+                            <div class="form-group col-md-6">
+                                <div class="select1_wrapper  ">
+                                    <div class="select1_inner" required>
+                                        <select class="select22  select "  style="width: 100%">
+                                            <option value="1" id="select2-k72o-result-iimg-1" class="select2-results__option">--No. of Room-- *</option>
+                                            <option value="2" id="select2-k72o-result-iimg-1" class="select2-results__option">1 </option>
+                                            <option value="3" id="select2-k72o-result-iimg-1" class="select2-results__option">2 </option>
+                                            <option value="4" id="select2-k72o-result-iimg-1" class="select2-results__option">3 </option>
+                                            <option value="4" id="select2-k72o-result-iimg-1" class="select2-results__option">4 </option>
+                                            <option value="4" id="select2-k72o-result-iimg-1" class="select2-results__option">5 </option>
+                                            <option value="4" id="select2-k72o-result-iimg-1" class="select2-results__option">6 </option>
+                                            <option value="4" id="select2-k72o-result-iimg-1" class="select2-results__option">7+ </option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-6 form-group ">
-                                <input type="text" class="" name="adult_quantity" placeholder="Number of Adults" required>
+                            <div class="form-group col-md-6">
+                                <div class="select1_wrapper  ">
+                                    <div class="select1_inner" required>
+                                        <select class="select22  select "  style="width: 100%">
+                                            <option value="1" id="select2-k72o-result-iimg-1" class="select2-results__option">--No. of Adults-- *</option>
+                                            <option value="2" id="select2-k72o-result-iimg-1" class="select2-results__option">1 </option>
+                                            <option value="3" id="select2-k72o-result-iimg-1" class="select2-results__option">2 </option>
+                                            <option value="4" id="select2-k72o-result-iimg-1" class="select2-results__option">3 </option>
+                                            <option value="4" id="select2-k72o-result-iimg-1" class="select2-results__option">4 </option>
+                                            <option value="4" id="select2-k72o-result-iimg-1" class="select2-results__option">5 </option>
+                                            <option value="4" id="select2-k72o-result-iimg-1" class="select2-results__option">6 </option>
+                                            <option value="4" id="select2-k72o-result-iimg-1" class="select2-results__option">7+ </option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-
-                            <div class="col-md-6 form-group ">
-                                <input type="text" class="" name="adult_quantity" placeholder="Number of Children" required>
+                            <div class="form-group col-md-6">
+                                <div class="select1_wrapper  ">
+                                    <div class="select1_inner" required>
+                                        <select class="select22  select "  style="width: 100%">
+                                            <option value="1" id="select2-k72o-result-iimg-1" class="select2-results__option">--No. of Children-- *</option>
+                                            <option value="2" id="select2-k72o-result-iimg-1" class="select2-results__option">1 </option>
+                                            <option value="3" id="select2-k72o-result-iimg-1" class="select2-results__option">2 </option>
+                                            <option value="4" id="select2-k72o-result-iimg-1" class="select2-results__option">3 </option>
+                                            <option value="4" id="select2-k72o-result-iimg-1" class="select2-results__option">4 </option>
+                                            <option value="4" id="select2-k72o-result-iimg-1" class="select2-results__option">5 </option>
+                                            <option value="4" id="select2-k72o-result-iimg-1" class="select2-results__option">6 </option>
+                                            <option value="4" id="select2-k72o-result-iimg-1" class="select2-results__option">7+ </option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-
                             <div class="col-md-6 form-group">
                                 <input name="first-name" type="first-name" placeholder="First Name *" required>
                             </div>
@@ -202,23 +237,23 @@
         </div>
     </footer>
     <!-- jQuery -->
-    <script src="{{ asset('frontend/js/jquery-3.6.0.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/jquery-migrate-3.0.0.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/modernizr-2.6.2.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/jquery.isotope.v3.0.2.js') }}"></script>
-    <script src="{{ asset('frontend/js/pace.js') }}"></script>
-    <script src="{{ asset('frontend/js/popper.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/scrollIt.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/jquery.waypoints.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/jquery.stellar.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/jquery.magnific-popup.js') }}"></script>
-    <script src="{{ asset('frontend/js/YouTubePopUp.js') }}"></script>
-    <script src="{{ asset('frontend/js/select2.js') }}"></script>
-    <script src="{{ asset('frontend/js/datepicker.js') }}"></script>
-    <script src="{{ asset('frontend/js/smooth-scroll.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/custom.js') }}"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-migrate-3.0.0.min.js"></script>
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/jquery.isotope.v3.0.2.js"></script>
+    <script src="js/pace.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scrollIt.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/jquery.magnific-popup.js"></script>
+    <script src="js/YouTubePopUp.js"></script>
+    <script src="js/select2.js"></script>
+    <script src="js/datepicker.js"></script>
+    <script src="js/smooth-scroll.min.js"></script>
+    <script src="js/custom.js"></script>
 </body>
 </html>

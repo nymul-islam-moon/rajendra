@@ -53,6 +53,11 @@ Route::prefix('/dashboard')->group(function () {
 });
 
 Route::prefix('/')->group(function () {
+
+    Route::get('/a', function () {
+        return view('frontend.room_book.index');
+    });
+
     Route::controller(RoomBookController::class)->prefix('/room-book')->group(function () {
         Route::get('/', 'index')->name('dashboard.roombook.index');
         Route::post('/', 'store')->name('dashboard.roombook.store');
