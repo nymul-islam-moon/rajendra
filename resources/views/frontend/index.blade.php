@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>Rajendra Eco Resort & Village Ltd.</title>
-    <link rel="shortcut icon" href="img/favicon.png" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow&amp;family=Barlow+Condensed&amp;family=Gilda+Display&amp;display=swap">
-    <link rel="stylesheet" href="css/plugins.css" />
-    <link rel="stylesheet" href="css/style.css" />
+
+    {{-- header links start --}}
+    <x-front_header />
+    {{-- header links end --}}
+
 </head>
 
 <body>
@@ -26,7 +27,7 @@
             <div class="logo-wrapper navbar-brand valign">
                 <a href="index.html">
                     <div class="logo">
-                        <img src="img/logo.png" class="logo-img" alt="">
+                        <img src="{{ asset('frontend/img/logo.png') }}" class="logo-img" alt="">
                     </div>
                 </a>
             </div>
@@ -98,7 +99,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="col2 c5">
                         <div class="select1_wrapper">
                             <label>Rooms</label>
@@ -150,10 +151,10 @@
                     </div>
                 </div>
                 <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp">
-                    <img src="img/rooms/8.jpg" alt="" class="mt-90 mb-30">
+                    <img src="{{ asset('frontend/img/rooms/8.jpg') }}" alt="" class="mt-90 mb-30">
                 </div>
                 <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp">
-                    <img src="img/rooms/2.jpg" alt="">
+                    <img src="{{ asset('frontend/img/rooms/2.jpg') }}" alt="">
                 </div>
             </div>
         </div>
@@ -245,13 +246,13 @@
                     <!-- slider area -->
                     <div id="slidy-container">
                         <figure id="slidy">
-                            <img src="img/gallery/1.JPG" alt="eyes">
-                            <img src="img/gallery/123.JPG" alt="lou">
-                            <img src="img/gallery/2.JPG" alt="lucie-2">
-                            <img src="img/gallery/3.JPG" alt="lucie">
+                            <img src="{{ asset('frontend/img/gallery/1.JPG') }}" alt="eyes">
+                            <img src="{{ asset('frontend/img/gallery/123.JPG') }}" alt="lou">
+                            <img src="{{ asset('frontend/img/gallery/2.JPG') }}" alt="lucie-2">
+                            <img src="{{ asset('frontend/img/gallery/3.JPG') }}" alt="lucie">
                         </figure>
                     </div>
-                    
+
                     <script>
                         /* user defined variables */
                         var timeOnSlide = 3,
@@ -301,7 +302,7 @@
                             css.innerHTML += "#slidy { text-align: left; margin: 0; font-size: 0; position: relative; width: " + (imgCount * 100) + "%;  }\n"; // set the width for the slidy container
                             css.innerHTML += "#slidy img { float: left; width: " + basePercentage + "%; }\n";
                             css.innerHTML += "@" + keyframeprefix + "keyframes slidy {\n";
-                            for (i = 0; i < (imgCount - 1); i++) { // 
+                            for (i = 0; i < (imgCount - 1); i++) { //
                                 position += slideRatio; // make the keyframe the position of the image
                                 css.innerHTML += position + "% { left: -" + (i * 100) + "%; }\n";
                                 position += moveRatio; // make the postion for the _next_ slide
@@ -366,7 +367,7 @@
                                             <div class="btn-line"><a href="room-details.html">Details</a></div>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="btn-line"><img class="virtule-tour" src="img/vt.png"> <a
+                                            <div class="btn-line"><img class="virtule-tour" src="{{ asset('frontend/img/vt.png') }}"> <a
                                                     href="room-details.html">Virtual Tour</a></div>
                                         </div>
 
@@ -377,7 +378,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="square-flip">
-                            <div class="square bg-img" data-background="img/rooms/2.jpg">
+                            <div class="square bg-img" data-background="{{ asset('frontend/img/rooms/2.jpg') }}">
                                 <span class="category"><a href="rooms2.html">Book</a></span>
                                 <div class="square-container d-flex align-items-end justify-content-end">
                                     <div class="box-title">
@@ -411,7 +412,7 @@
                                             <div class="btn-line"><a href="room-details.html">Details</a></div>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="btn-line"><img class="virtule-tour" src="img/vt.png"> <a
+                                            <div class="btn-line"><img class="virtule-tour" src="{{ asset('frontend/img/vt.png') }}"> <a
                                                     href="room-details.html">Virtual Tour</a></div>
                                         </div>
 
@@ -456,7 +457,7 @@
                                             <div class="btn-line"><a href="room-details.html">Details</a></div>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="btn-line"><img class="virtule-tour" src="img/vt.png"> <a
+                                            <div class="btn-line"><img class="virtule-tour" src="{{ asset('frontend/img/vt.png') }}"> <a
                                                     href="room-details.html">Virtual Tour</a></div>
                                         </div>
 
@@ -467,7 +468,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="square-flip">
-                            <div class="square bg-img" data-background="img/rooms/6.jpg">
+                            <div class="square bg-img" data-background="{{ asset('frontend/img/rooms/6.jpg') }}">
                                 <span class="category"><a href="rooms2.html">Book</a></span>
                                 <div class="square-container d-flex align-items-end justify-content-end">
                                     <div class="box-title">
@@ -501,7 +502,7 @@
                                             <div class="btn-line"><a href="room-details.html">Details</a></div>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="btn-line"><img class="virtule-tour" src="img/vt.png"> <a
+                                            <div class="btn-line"><img class="virtule-tour" src="{{ asset('frontend/img/vt.png') }}"> <a
                                                     href="room-details.html">Virtual Tour</a></div>
                                         </div>
 
@@ -512,7 +513,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="square-flip">
-                            <div class="square bg-img" data-background="img/rooms/8.jpg">
+                            <div class="square bg-img" data-background="{{ asset('frontend/img/rooms/8.jpg') }}">
                                 <span class="category"><a href="rooms2.html">Book</a></span>
                                 <div class="square-container d-flex align-items-end justify-content-end">
                                     <div class="box-title">
@@ -525,7 +526,7 @@
                                         <div class="btn-line"><a href="room-details.html">Details</a></div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="btn-line"><img class="virtule-tour" src="img/vt.png"> <a
+                                        <div class="btn-line"><img class="virtule-tour" src="{{ asset('frontend/img/vt.png') }}"> <a
                                                 href="room-details.html">Virtual Tour</a></div>
                                     </div>
 
@@ -555,7 +556,7 @@
                                             <div class="btn-line"><a href="room-details.html">Details</a></div>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="btn-line"><img class="virtule-tour" src="img/vt.png"> <a
+                                            <div class="btn-line"><img class="virtule-tour" src="{{ asset('frontend/img/vt.png') }}"> <a
                                                     href="room-details.html">Virtual Tour</a></div>
                                         </div>
 
@@ -566,7 +567,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="square-flip">
-                            <div class="square bg-img" data-background="img/rooms/9.jpg">
+                            <div class="square bg-img" data-background="{{ asset('frontend/img/rooms/9.jpg') }}">
                                 <span class="category"><a href="rooms2.html">Book</a></span>
                                 <div class="square-container d-flex align-items-end justify-content-end">
                                     <div class="box-title">
@@ -600,7 +601,7 @@
                                             <div class="btn-line"><a href="room-details.html">Details</a></div>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="btn-line"><img class="virtule-tour" src="img/vt.png"> <a
+                                            <div class="btn-line"><img class="virtule-tour" src="{{ asset('frontend/img/vt.png') }}"> <a
                                                     href="room-details.html">Virtual Tour</a></div>
                                         </div>
 
@@ -637,7 +638,7 @@
                 <div class="col-md-8">
                     <div class="owl-carousel owl-theme">
                         <div class="pricing-card">
-                            <img src="img/pricing/1.jpg" alt="">
+                            <img src="{{ asset('frontend/img/pricing/1.jpg') }}" alt="">
                             <div class="desc">
                                 <div class="name">Room cleaning</div>
                                 <div class="amount">৳ 3550<span>/ month</span></div>
@@ -649,7 +650,7 @@
                             </div>
                         </div>
                         <div class="pricing-card">
-                            <img src="img/pricing/2.jpg" alt="">
+                            <img src="{{ asset('frontend/img/pricing/2.jpg') }}" alt="">
                             <div class="desc">
                                 <div class="name">Drinks included</div>
                                 <div class="amount">৳ 5330<span>/ daily</span></div>
@@ -661,7 +662,7 @@
                             </div>
                         </div>
                         <div class="pricing-card">
-                            <img src="img/pricing/3.jpg" alt="">
+                            <img src="{{ asset('frontend/img/pricing/3.jpg') }}" alt="">
                             <div class="desc">
                                 <div class="name">Room Breakfast</div>
                                 <div class="amount">৳ 5430<span>/ daily</span></div>
@@ -673,7 +674,7 @@
                             </div>
                         </div>
                         <div class="pricing-card">
-                            <img src="img/pricing/4.jpg" alt="">
+                            <img src="{{ asset('frontend/img/pricing/4.jpg') }}" alt="">
                             <div class="desc">
                                 <div class="name">Safe & Secure</div>
                                 <div class="amount">৳ 4515<span>/ daily</span></div>
@@ -783,7 +784,7 @@
             <div class="row">
                 <div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInUp"
                     style="border-right: 1px solid rgba(140,142,145,.15);">
-                    <h1 style="text-align: left;font-size: 28px;"><img class="social-icon" src="img/youtube.svg"> Our
+                    <h1 style="text-align: left;font-size: 28px;"><img class="social-icon" src="{{ asset('frontend/img/youtube.svg') }}"> Our
                         YouTube</h1>
                     <div class="reservations">
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/B-6l80FB-sU"
@@ -794,7 +795,7 @@
                 </div>
                 <div class="col col-md-6 animate-box" data-animate-effect="fadeInUp">
                     <h1 style="text-align: left;font-size: 28px;"><img class="social-icon"
-                            src="img/so-ins-black.svg">Our Instagram</h1>
+                            src="{{ asset('frontend/img/so-ins-black.svg') }}">Our Instagram</h1>
                     <div id="instafeed-container"></div>
                     <script
                         src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js"></script>
@@ -813,14 +814,14 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Services -->
     <section class="services section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 p-0 animate-box" data-animate-effect="fadeInLeft">
                     <div class="img left">
-                        <a href="#"><img src="img/gallery/3.jpg" alt=""></a>
+                        <a href="#"><img src="{{ asset('frontend/img/gallery/3.jpg') }}" alt=""></a>
                     </div>
                 </div>
                 <div class="col-md-6 p-0 bg-cream valign animate-box" data-animate-effect="fadeInRight">
@@ -855,14 +856,14 @@
                 </div>
                 <div class="col-md-6 p-0 order1 animate-box" data-animate-effect="fadeInRight">
                     <div class="img">
-                        <a href="#"><img src="img/spa/3.jpg" alt=""></a>
+                        <a href="#"><img src="{{ asset('frontend/img/spa/3.jpg') }}" alt=""></a>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 p-0 animate-box" data-animate-effect="fadeInLeft">
                     <div class="img left">
-                        <a href="#"><img src="img/spa/2.jpg" alt=""></a>
+                        <a href="#"><img src="{{ asset('frontend/img/spa/2.jpg') }}" alt=""></a>
                     </div>
                 </div>
                 <div class="col-md-6 p-0 bg-cream valign animate-box" data-animate-effect="fadeInRight">
@@ -897,7 +898,7 @@
                 </div>
                 <div class="col-md-6 p-0 order1 animate-box" data-animate-effect="fadeInRight">
                     <div class="img">
-                        <a href="#"><img src="img/gallery/4.JPG" alt=""></a>
+                        <a href="#"><img src="{{ asset('frontend/img/gallery/4.JPG') }}" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -1000,106 +1001,35 @@
             <div class="row">
                 <div class="col-md-7 owl-carousel owl-theme">
                     <div class="clients-logo">
-                        <a href="#0"><img src="img/clients/axis.png" alt=""></a>
+                        <a href="#0"><img src="{{ asset('frontend/img/clients/axis.png') }}" alt=""></a>
                     </div>
                     <div class="clients-logo">
-                        <a href="#0"><img src="img/clients/2.png" alt=""></a>
+                        <a href="#0"><img src="{{ asset('frontend/img/clients/2.png') }}" alt=""></a>
                     </div>
                     <div class="clients-logo">
-                        <a href="#0"><img src="img/clients/3.png" alt=""></a>
+                        <a href="#0"><img src="{{ asset('frontend/img/clients/3.png') }}" alt=""></a>
                     </div>
                     <div class="clients-logo">
-                        <a href="#0"><img src="img/clients/4.png" alt=""></a>
+                        <a href="#0"><img src="{{ asset('frontend/img/clients/4.png') }}" alt=""></a>
                     </div>
                     <div class="clients-logo">
-                        <a href="#0"><img src="img/clients/5.png" alt=""></a>
+                        <a href="#0"><img src="{{ asset('frontend/img/clients/5.png') }}" alt=""></a>
                     </div>
                     <div class="clients-logo">
-                        <a href="#0"><img src="img/clients/6.png" alt=""></a>
+                        <a href="#0"><img src="{{ asset('frontend/img/clients/6.png') }}" alt=""></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="footer-column footer-about">
-                            <h3 class="footer-title">About Rajendra</h3>
-                            <p class="footer-about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                            
-                        </div>
-                    </div>
-                    <div class="col-md-3 offset-md-1">
-                        <div class="footer-column footer-explore clearfix">
-                            <h3 class="footer-title">Explore</h3>
-                            <ul class="footer-explore-list list-unstyled">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="facilities.html">Facilities</a></li>
-                                <li><a href="event.html">Meeting & Event</a></li>
-                                <li><a href="spa-wellness.html">Spa & Wellness</a></li>
-                                <li><a href="special-offers.html">Special Offers</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="footer-column footer-contact">
-                            <h3 class="footer-title">Contact</h3>
-                            <p class="footer-contact-text">Pingail, Bhabanipur Bazar. Gazipur, Dhaka, <br>Bangladesh.
-                                Bhabanipur 1740 , Gazipur, Bangladesh
-                            </p>
-                            <div class="footer-contact-info">
-                                <p class="footer-contact-phone"><span class="flaticon-call"></span> +880
-                                    1921-676632,+880 1750-448886 </p>
-                                <p class="footer-contact-mail"><span class="flaticon-envelope"></span>
-                                    booking@rajendraecoresort.com.bd</p>
-                            </div>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="footer-bottom-inner">
-                            <p class="footer-bottom-copy-right">© Copyright 2023 by <a href="#">Rajendra Eco Resort &
-                                    Village Ltd</a> Carfted By <a href="https://insametech.com/">Insame</a> & <a
-                                    href="https://winbazdigital.com/">Winbaz</a> </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <x-front_footer_page_links />
+
     <!-- jQuery -->
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/jquery-migrate-3.0.0.min.js"></script>
-    <script src="js/modernizr-2.6.2.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/jquery.isotope.v3.0.2.js"></script>
-    <script src="js/pace.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scrollIt.min.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/jquery.magnific-popup.js"></script>
-    <script src="js/YouTubePopUp.js"></script>
-    <script src="js/select2.js"></script>
-    <script src="js/datepicker.js"></script>
-    <script src="js/smooth-scroll.min.js"></script>
-    <script src="js/vegas.slider.min.js"></script>
-    <script src="js/custom.js"></script>
+    <x-front_footer />
+    <!-- jQuery -->
+
     <!-- Vegas Background Slideshow (vegas.slider kenburns) -->
     <script>
         $(document).ready(function () {

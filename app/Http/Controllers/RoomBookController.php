@@ -36,7 +36,7 @@ class RoomBookController extends Controller
      */
     public function store(StoreRoomBookRequest $request)
     {
-        //
+        dd($request->all());
     }
 
     /**

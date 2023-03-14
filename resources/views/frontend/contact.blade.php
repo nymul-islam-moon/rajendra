@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>Rajendra Eco Resort & Village Ltd.</title>
-    <link rel="shortcut icon" href="img/favicon.png" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow&amp;family=Barlow+Condensed&amp;family=Gilda+Display&amp;display=swap">
-    <link rel="stylesheet" href="css/plugins.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+
+    {{-- header links start --}}
+    <x-front_header />
+    {{-- header links end --}}
+
 </head>
 
 <body>
@@ -238,83 +238,13 @@
             </div>
         </div>
     </section>
+
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="footer-column footer-about">
-                            <h3 class="footer-title">About Rajendra</h3>
-                            <p class="footer-about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                <div class="footer-about-social-list">
-                                    <a href="https://www.facebook.com/rajendraresort?mibextid=LQQJ4d"><i class="ti-facebook"></i></a>
-                                    <a href="#"><i class="ti-instagram"></i></a>
-                                    <a href="#"><i class="ti-twitter"></i></a>
-                                    <a href="#"><i class="ti-youtube"></i></a>
-                                </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 offset-md-1">
-                        <div class="footer-column footer-explore clearfix">
-                            <h3 class="footer-title">Explore</h3>
-                            <ul class="footer-explore-list list-unstyled">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="facilities.html">Facilities</a></li>
-                                <li><a href="event.html">Meeting & Event</a></li>
-                                <li><a href="spa-wellness.html">Spa & Wellness</a></li>
-                                <li><a href="special-offers.html">Special Offers</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="footer-column footer-contact">
-                            <h3 class="footer-title">Contact</h3>
-                            <p class="footer-contact-text">Pingail, Bhabanipur Bazar. Gazipur, Dhaka, <br>Bangladesh. Bhabanipur 1740 , Gazipur, Bangladesh
-                            </p>
-                            <div class="footer-contact-info">
-                                <p class="footer-contact-phone"><span class="flaticon-call"></span> +880 1921-676632,+880 1750-448886 </p>
-                                <p class="footer-contact-mail"><span class="flaticon-envelope"></span>  booking@rajendraecoresort.com.bd</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="footer-bottom-inner">
-                            <p class="footer-bottom-copy-right">© Copyright 2023 by <a href="#">Rajendra Eco Resort & Village Ltd</a> Carfted By <a href="https://insametech.com/">Insame</a> & <a href="https://winbazdigital.com/">Winbaz</a>  </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <x-front_footer_page_links />
+
     <!-- jQuery -->
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/jquery-migrate-3.0.0.min.js"></script>
-    <script src="js/modernizr-2.6.2.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/jquery.isotope.v3.0.2.js"></script>
-    <script src="js/pace.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scrollIt.min.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/jquery.magnific-popup.js"></script>
-    <script src="js/YouTubePopUp.js"></script>
-    <script src="js/select2.js"></script>
-    <script src="js/datepicker.js"></script>
-    <script src="js/smooth-scroll.min.js"></script>
-    <script src="js/custom.js"></script>
+    <x-front_footer />
+    <!-- jQuery -->
+
 </body>
 </html>

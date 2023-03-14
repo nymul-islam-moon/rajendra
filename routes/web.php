@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\HomeBookingController;
+use App\Http\Controllers\HomeContactController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoomBookController;
 use App\Http\Controllers\RoomCategoryController;
 use App\Http\Controllers\RoomController;
@@ -47,6 +50,14 @@ Route::prefix('/dashboard')->group(function () {
         Route::delete('/{room}/destroy', 'destroy')->name('dashboard.room.destroy');
     });
 
+    Route::controller(RoomBookController::class)->prefix('/room')->group(function () {
+        Route::get('/', 'index')->name('dashboard.roombook.index');
+        Route::post('/', 'store')->name('dashboard.roombook.store');
+        Route::get('/{roomBook}/edit', 'edit')->name('dashboard.roombook.edit');
+        Route::put('/{roomBook}/update', 'update')->name('dashboard.roombook.update');
+        Route::delete('/{roomBook}/destroy', 'destroy')->name('dashboard.roombook.destroy');
+    });
+
     Route::get('/', function () {
         return view('dashboard.test.index');
     });
@@ -54,15 +65,28 @@ Route::prefix('/dashboard')->group(function () {
 
 Route::prefix('/')->group(function () {
 
-    Route::get('/a', function () {
-        return view('frontend.room_book.index');
+    Route::get('/', function () {
+        return view('frontend.index');
     });
 
-    Route::controller(RoomBookController::class)->prefix('/room-book')->group(function () {
-        Route::get('/', 'index')->name('dashboard.roombook.index');
-        Route::post('/', 'store')->name('dashboard.roombook.store');
-        Route::get('/{roomBook}/edit', 'edit')->name('dashboard.roombook.edit');
-        Route::put('/{roomBook}/update', 'update')->name('dashboard.roombook.update');
-        Route::delete('/{roomBook}/destroy', 'destroy')->name('dashboard.roombook.destroy');
+    Route::controller(HomeController::class)->prefix('/')->group(function () {
+        Route::get('/', 'index')->name('home.index');
     });
+
+    Route::controller(HomeContactController::class)->prefix('/Contact')->group(function () {
+        Route::get('/', 'index')->name('home.contact.index');
+    });
+
+
+    Route::controller(HomeBookingController::class)->prefix('/Roon-Book')->group(function () {
+        Route::get('/', 'index')->name('home.contact.index');
+    });
+
+    // Route::controller(RoomBookController::class)->prefix('/room-book')->group(function () {
+    //     Route::get('/', 'index')->name('dashboard.roombook.index');
+    //     Route::post('/', 'store')->name('dashboard.roombook.store');
+    //     Route::get('/{roomBook}/edit', 'edit')->name('dashboard.roombook.edit');
+    //     Route::put('/{roomBook}/update', 'update')->name('dashboard.roombook.update');
+    //     Route::delete('/{roomBook}/destroy', 'destroy')->name('dashboard.roombook.destroy');
+    // });
 });
