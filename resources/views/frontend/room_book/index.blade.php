@@ -90,9 +90,9 @@
                                     <div class="select1_inner" required>
                                         <select class="select22  select "  style="width: 100%" name="room_id">
                                             <option value="1" id="select2-k72o-result-iimg-1" class="select2-results__option">--Select Room-- *</option>
-                                            <option value="2" id="select2-k72o-result-iimg-1" class="select2-results__option">1 Rooms</option>
-                                            <option value="3" id="select2-k72o-result-iimg-1" class="select2-results__option">2 Rooms</option>
-                                            <option value="4" id="select2-k72o-result-iimg-1" class="select2-results__option">3 Rooms</option>
+                                            @foreach ($rooms as $room)
+                                                <option value="{{ $room->id }}" id="select2-k72o-result-iimg-1" class="select2-results__option">{{ $room->name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\RoomBook;
 use App\Http\Requests\StoreRoomBookRequest;
 use App\Http\Requests\UpdateRoomBookRequest;
+use App\Models\Room;
 
 class RoomBookController extends Controller
 {
@@ -15,7 +16,8 @@ class RoomBookController extends Controller
      */
     public function index()
     {
-        return view('frontend.room_book.index');
+        $rooms = Room::all();
+        return view('frontend.room_book.index', compact('rooms'));
     }
 
     /**

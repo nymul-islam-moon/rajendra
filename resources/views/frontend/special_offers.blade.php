@@ -6,55 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>Rajendra Eco Resort & Village Ltd.</title>
-    <link rel="shortcut icon" href="img/favicon.png" />
+
+    <x-front_header />
+
+    {{-- <link rel="shortcut icon" href="img/favicon.png" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow&amp;family=Barlow+Condensed&amp;family=Gilda+Display&amp;display=swap">
     <link rel="stylesheet" href="css/plugins.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com/"> --}}
 </head>
 
 <body>
-<!-- Progress scroll totop -->
-<div class="progress-wrap cursor-pointer">
-    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-    </svg>
-</div>
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg">
-    <div class="container">
-        <!-- Logo -->
-        <div class="logo-wrapper navbar-brand valign">
-            <a href="index.html">
-                <div class="logo">
-                    <img src="img/logo.png" class="logo-img" alt="">
-                </div>
-            </a>
-        </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span
-                class="icon-bar"><i class="ti-line-double"></i></span> </button>
-        <!-- Navbar links -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown"><a href="index.html"> <span class="nav-link active"> Home</span></a>
-
-                </li>
-                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                <li class="nav-item"> <a class="nav-link" href="facilities.html">Facilities</a></li>
-                <li class="nav-item"><a class="nav-link" href="spa-wellness.html">Spa</a></li>
-                <li class="nav-item"><a class="nav-link" href="meeting.html">Meetings & Events </a></li>
-                <li class="nav-item"><a class="nav-link" href="special-offers.html">Special Offers</a></li>
-            </ul>
-        </div>
+    <!-- Progress scroll totop -->
+    <div class="progress-wrap cursor-pointer">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
     </div>
-</nav>
+
+    <!-- Navbar -->
+    <x-front_navbar />
+
+
     <!-- Header Banner -->
     <div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="img/slider/6.jpg">
         <div class="container">
             <div class="row">
 				<div class="col-md-12 caption mt-90">
-				    
+
                     <h5>Rajendra Eco Resort & Village Ltd</h5>
                     <h1>Special Offers</h1>
 				</div>
@@ -65,7 +44,7 @@
     <section class="rooms1 section-padding bg-cream" data-scroll-index="1">
         <div class="container">
             <div class="row">
-               
+
                 <div class="col-md-4">
                     <div class="item">
                         <div class="position-re o-hidden"> <img class="offer-img-border" src="img/offers/5.jpg" alt=""> </div>
@@ -91,7 +70,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="item">
-                        <div class="position-re o-hidden"> <img class="offer-img-border" src="img/offers/2.png" alt=""> </div> 
+                        <div class="position-re o-hidden"> <img class="offer-img-border" src="img/offers/2.png" alt=""> </div>
                         <div class="con">
                             <h6><a href="offer-details.html">5000 BDT</a></h6>
                             <h5><a href="offer-details.html">Superior Room</a></h5>
@@ -114,7 +93,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="item">
-                        <div class="position-re o-hidden"> <img class="offer-img-border" src="img/offers/3.jpg" alt=""> </div> 
+                        <div class="position-re o-hidden"> <img class="offer-img-border" src="img/offers/3.jpg" alt=""> </div>
                         <div class="con">
                             <h6><a href="offer-details.html">5000 BDT</a></h6>
                             <h5><a href="offer-details.html">Superior Room</a></h5>
@@ -137,7 +116,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="item">
-                        <div class="position-re o-hidden"> <img class="offer-img-border" src="img/offers/22.jpg" alt=""> </div> 
+                        <div class="position-re o-hidden"> <img class="offer-img-border" src="img/offers/22.jpg" alt=""> </div>
                         <div class="con">
                             <h6><a href="offer-details.html">5000 BDT</a></h6>
                             <h5><a href="offer-details.html">Deluxe Room</a></h5>
@@ -160,7 +139,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="item">
-                        <div class="position-re o-hidden"> <img class="offer-img-border" src="img/offers/6.jpg" alt=""> </div> 
+                        <div class="position-re o-hidden"> <img class="offer-img-border" src="img/offers/6.jpg" alt=""> </div>
                         <div class="con">
                             <h6><a href="offer-details.html">5000 BDT</a></h6>
                             <h5><a href="offer-details.html">Superior Room</a></h5>
@@ -183,7 +162,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="item">
-                        <div class="position-re o-hidden"> <img class="offer-img-border" src="img/offers/7.jpg" alt=""> </div> 
+                        <div class="position-re o-hidden"> <img class="offer-img-border" src="img/offers/7.jpg" alt=""> </div>
                         <div class="con">
                             <h6><a href="offer-details.html">5000 BDT</a></h6>
                             <h5><a href="offer-details.html">Superior Room</a></h5>
@@ -207,7 +186,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Reservation & Booking Form -->
     <section class="testimonials">
         <div class="background bg-img bg-fixed section-padding pb-0" data-background="img/slider/2.JPG" data-overlay-dark="2">
@@ -222,7 +201,7 @@
                             <div class="text">
                                 <p class="color-1">Reservation</p> <a class="color-1" href="tel:+8801715-431714">+880 1715-431714</a>
                             </div>
-                        </div> 
+                        </div>
                         <p><i class="ti-check"></i><small>Call us, it's toll-free.</small></p>
                     </div>
                     <!-- Booking From -->
@@ -319,7 +298,9 @@
         </div>
     </section>
     <!-- Footer -->
-    <footer class="footer">
+    <x-front_footer_page_links />
+
+    {{-- <footer class="footer">
         <div class="footer-top">
             <div class="container">
                 <div class="row">
@@ -359,7 +340,7 @@
                                 <p class="footer-contact-phone"><span class="flaticon-call"></span> +880 1921-676632,+880 1750-448886 </p>
                                 <p class="footer-contact-mail"><span class="flaticon-envelope"></span>  booking@rajendraecoresort.com.bd</p>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -376,25 +357,10 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> --}}
     <!-- jQuery -->
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/jquery-migrate-3.0.0.min.js"></script>
-    <script src="js/modernizr-2.6.2.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/jquery.isotope.v3.0.2.js"></script>
-    <script src="js/pace.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scrollIt.min.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/jquery.magnific-popup.js"></script>
-    <script src="js/YouTubePopUp.js"></script>
-    <script src="js/select2.js"></script>
-    <script src="js/datepicker.js"></script>
-    <script src="js/smooth-scroll.min.js"></script>
-    <script src="js/custom.js"></script>
+
+    <x-front_footer />
+
 </body>
 </html>

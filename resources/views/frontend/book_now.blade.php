@@ -66,7 +66,7 @@
                     <h3 class="book-now-title">Book Now</h3>
                     <p class="book-now-p">Please fill in the following booking form and send it to us. We will get back to you with confirmation as soon as possible.</p>
 
-                    <form method="post" class="contact__form book-form" action="{{ route('') }}">
+                    <form method="post" class="contact__form book-form" action="{{ route('dashboard.roombook.store') }}">
                         @csrf
                         @method('POST')
                         <!-- form message -->
@@ -89,9 +89,9 @@
                                     <div class="select1_inner" required>
                                         <select class="select22  select"  style="width: 100%" name="rooms">
                                             <option value="1" id="select2-k72o-result-iimg-1" class="select2-results__option">--Select Room-- *</option>
-                                            <option value="2" id="select2-k72o-result-iimg-1" class="select2-results__option">1 Rooms</option>
-                                            <option value="3" id="select2-k72o-result-iimg-1" class="select2-results__option">2 Rooms</option>
-                                            <option value="4" id="select2-k72o-result-iimg-1" class="select2-results__option">3 Rooms</option>
+                                            @foreach ($rooms as $room)
+                                                <option value="{{ $room->id }}" id="select2-k72o-result-iimg-1" class="select2-results__option">{{ $room->name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -130,7 +130,7 @@
                                 <textarea name="message" id="message" cols="30" rows="4" placeholder="Special Requirements *" required></textarea>
                             </div>
                             <div class="col-md-12">
-                                <button class="butn-dark"><a href="#0"><span>Book Now</span></a></button>
+                                <button type="submit" class="butn-dark"><a href="#0"><span>Book Now</span></a></button>
                             </div>
                         </div>
                     </form>
@@ -143,65 +143,8 @@
     <!-- Reservation & Booking Form -->
 
     <!-- Footer -->
+    <x-front_footer_page_links />
 
-    <footer class="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="footer-column footer-about">
-                            <h3 class="footer-title">About Rajendra</h3>
-                            <p class="footer-about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                <div class="footer-about-social-list">
-                                    <a href="https://www.facebook.com/rajendraresort?mibextid=LQQJ4d"><i class="ti-facebook"></i></a>
-                                    <a href="#"><i class="ti-instagram"></i></a>
-                                    <a href="#"><i class="ti-twitter"></i></a>
-                                    <a href="#"><i class="ti-youtube"></i></a>
-                                </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 offset-md-1">
-                        <div class="footer-column footer-explore clearfix">
-                            <h3 class="footer-title">Explore</h3>
-                            <ul class="footer-explore-list list-unstyled">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="facilities.html">Facilities</a></li>
-                                <li><a href="event.html">Meeting & Event</a></li>
-                                <li><a href="spa-wellness.html">Spa & Wellness</a></li>
-                                <li><a href="special-offers.html">Special Offers</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="footer-column footer-contact">
-                            <h3 class="footer-title">Contact</h3>
-                            <p class="footer-contact-text">Pingail, Bhabanipur Bazar. Gazipur, Dhaka, <br>Bangladesh. Bhabanipur 1740 , Gazipur, Bangladesh
-                            </p>
-                            <div class="footer-contact-info">
-                                <p class="footer-contact-phone"><span class="flaticon-call"></span> +880 1921-676632,+880 1750-448886 </p>
-                                <p class="footer-contact-mail"><span class="flaticon-envelope"></span>  booking@rajendraecoresort.com.bd</p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="footer-bottom-inner">
-                            <p class="footer-bottom-copy-right">© Copyright 2023 by <a href="#">Rajendra Eco Resort & Village Ltd</a> Carfted By <a href="https://insametech.com/">Insame</a> & <a href="https://winbazdigital.com/">Winbaz</a>  </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
     <!-- jQuery -->
     <x-front_footer />
 </body>

@@ -19,7 +19,7 @@
                             <li><a href="facilities.html">Facilities</a></li>
                             <li><a href="event.html">Meeting & Event</a></li>
                             <li><a href="spa-wellness.html">Spa & Wellness</a></li>
-                            <li><a href="special-offers.html">Special Offers</a></li>
+                            <li><a href="{{ route('home.specialoffer.index') }}">Special Offers</a></li>
                             <li><a href="{{ route('home.contact.index') }}">Contact</a></li>
                         </ul>
                     </div>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeBookingController;
 use App\Http\Controllers\HomeContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HomeSpecialController;
 use App\Http\Controllers\RoomBookController;
 use App\Http\Controllers\RoomCategoryController;
 use App\Http\Controllers\RoomController;
@@ -25,6 +26,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::prefix('/dashboard')->group(function () {
+
     Route::controller(SpecialOffersController::class)->prefix('/special-offer')->group(function () {
         Route::get('/', 'index')->name('dashboard.specialOffer.index');
         Route::post('/', 'store')->name('dashboard.specialOffer.store');
@@ -50,7 +52,7 @@ Route::prefix('/dashboard')->group(function () {
         Route::delete('/{room}/destroy', 'destroy')->name('dashboard.room.destroy');
     });
 
-    Route::controller(RoomBookController::class)->prefix('/room')->group(function () {
+    Route::controller(RoomBookController::class)->prefix('/room-book')->group(function () {
         Route::get('/', 'index')->name('dashboard.roombook.index');
         Route::post('/', 'store')->name('dashboard.roombook.store');
         Route::get('/{roomBook}/edit', 'edit')->name('dashboard.roombook.edit');
@@ -81,6 +83,12 @@ Route::prefix('/')->group(function () {
     Route::controller(HomeBookingController::class)->prefix('/Roon-Book')->group(function () {
         Route::get('/', 'index')->name('home.contact.index');
     });
+
+    Route::controller(HomeSpecialController::class)->prefix('/Special-Offers')->group(function () {
+        Route::get('/', 'index')->name('home.specialoffer.index');
+    });
+
+
 
     // Route::controller(RoomBookController::class)->prefix('/room-book')->group(function () {
     //     Route::get('/', 'index')->name('dashboard.roombook.index');
